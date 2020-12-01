@@ -1,2 +1,2 @@
-ruby 2.4.0
-redis 6.0.7
+ruby 2.7.2
+redis 6.0.9

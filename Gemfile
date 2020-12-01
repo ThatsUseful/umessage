@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.4.0"
+ruby "2.7.2"
 
 gem "rails"
 gem "foreman"
@@ -10,7 +10,7 @@ gem "redis"
 
 gem "jquery-rails"
 gem "bootstrap"
-gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem "bootstrap_form"
 gem "rails_autolink"
 
 group :development, :test do
@@ -20,7 +20,7 @@ end
 
 group :development do
   gem "awesome_print"
-  gem "web-console", "~> 2.0"
+  gem "web-console"
   gem "spring"
   gem "annotate"
 end
