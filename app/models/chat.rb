@@ -2,22 +2,40 @@
 #
 # Table name: chat
 #
-#  ROWID                 :integer          primary key
-#  guid                  :text             not null
-#  style                 :integer
-#  state                 :integer
-#  account_id            :text
-#  properties            :binary
-#  chat_identifier       :text
-#  service_name          :text
-#  room_name             :text
-#  account_login         :text
-#  is_archived           :integer          default(0)
-#  last_addressed_handle :text
-#  display_name          :text
-#  group_id              :text
-#  is_filtered           :integer          default(0)
-#  successful_query      :integer          default(1)
+#  ROWID                       :integer          primary key
+#  account_login               :text
+#  chat_identifier             :text
+#  ck_sync_state               :integer          default(0)
+#  display_name                :text
+#  guid                        :text             not null
+#  is_archived                 :integer          default(0)
+#  is_blackholed               :integer          default(0)
+#  is_filtered                 :integer
+#  last_addressed_handle       :text
+#  last_read_message_timestamp :integer          default(0)
+#  properties                  :binary
+#  room_name                   :text
+#  server_change_token         :text
+#  service_name                :text
+#  sr_ck_sync_state            :integer          default(0)
+#  sr_server_change_token      :text
+#  state                       :integer
+#  style                       :integer
+#  successful_query            :integer
+#  account_id                  :text
+#  cloudkit_record_id          :text
+#  engram_id                   :text
+#  group_id                    :text
+#  last_addressed_sim_id       :text
+#  original_group_id           :text
+#  sr_cloudkit_record_id       :text
+#
+# Indexes
+#
+#  chat_idx_chat_identifier               (chat_identifier)
+#  chat_idx_chat_identifier_service_name  (chat_identifier,service_name)
+#  chat_idx_chat_room_name_service_name   (room_name,service_name)
+#  chat_idx_is_archived                   (is_archived)
 #
 
 class Chat < ApplicationRecord

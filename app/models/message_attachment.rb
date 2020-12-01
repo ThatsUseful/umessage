@@ -2,8 +2,18 @@
 #
 # Table name: message_attachment_join
 #
-#  message_id    :integer
 #  attachment_id :integer
+#  message_id    :integer
+#
+# Indexes
+#
+#  message_attachment_join_idx_attachment_id  (attachment_id)
+#  message_attachment_join_idx_message_id     (message_id)
+#
+# Foreign Keys
+#
+#  attachment_id  (attachment_id => attachment.ROWID) ON DELETE => cascade
+#  message_id     (message_id => message.ROWID) ON DELETE => cascade
 #
 
 class MessageAttachment < ApplicationRecord

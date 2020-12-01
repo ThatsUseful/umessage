@@ -2,10 +2,11 @@
 #
 # Table name: handle
 #
-#  ROWID              :integer          primary key
 #  id                 :text             not null
+#  ROWID              :integer          primary key
 #  country            :text
 #  service            :text             not null
+#  person_centric_id  :text
 #  uncanonicalized_id :text
 #
 
