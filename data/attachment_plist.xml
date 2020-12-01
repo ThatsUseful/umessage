@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>$version</key>
+    <integer>100000</integer>
+    
+    <key>$archiver</key>
+    <string>NSKeyedArchiver</string>
+
+    <key>$top</key>
+    <dict>
+      <key>root</key>
+      <dict>
+        <key>CF$UID</key>
+        <integer>1</integer>
+      </dict>
+    </dict>
+
+    <key>$objects</key>
+    <array>
+      <string>$null</string>
+      <dict>
+        <key>richLinkIsPlaceholder</key>
+        <false/>
+
+        <key>richLinkMetadata</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>2</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>33</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>imageMetadata</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>21</integer>
+        </dict>
+
+        <key>itemType</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>11</integer>
+        </dict>
+
+        <key>version</key>
+        <integer>1</integer>
+
+        <key>iconMetadata</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>15</integer>
+        </dict>
+
+        <key>originalURL</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>3</integer>
+        </dict>
+
+        <key>URL</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>6</integer>
+        </dict>
+
+        <key>title</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>8</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>32</integer>
+        </dict>
+
+        <key>summary</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>9</integer>
+        </dict>
+
+        <key>icon</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>12</integer>
+        </dict>
+
+        <key>image</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>19</integer>
+        </dict>
+
+        <key>siteName</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>10</integer>
+        </dict>
+
+        <key>images</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>31</integer>
+        </dict>
+
+        <key>icons</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>26</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>NS.base</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>0</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>5</integer>
+        </dict>
+
+        <key>NS.relative</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>4</integer>
+        </dict>
+      </dict>
+
+      <string>https://soundcloud.com/scottarutherford/its-my-life-ii/s-FnFo0SOoihC</string>
+      <dict>
+        <key>$classname</key>
+        <string>NSURL</string>
+
+        <key>$classes</key>
+        <array>
+          <string>NSURL</string>
+          <string>NSObject</string>
+        </array>
+      </dict>
+
+      <dict>
+        <key>NS.base</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>0</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>5</integer>
+        </dict>
+
+        <key>NS.relative</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>7</integer>
+        </dict>
+      </dict>
+
+      <string>https://soundcloud.com/scottarutherford/its-my-life-ii/s-FnFo0SOoihC</string>
+      <string>It's My Life (II)</string>
+      <string>Except where clearly a cover (or the dance mixes), all music written and copyright Scott Rutherford, all instruments, programming, mixing, mastering by Scott Rutherford copyright, me, everywhere, fore</string>
+      <string>SoundCloud</string>
+      <string>music.song</string>
+
+      <dict>
+        <key>imageType</key>
+        <integer>0</integer>
+
+        <key>richLinkImageAttachmentSubstituteIndex</key>
+        <integer>0</integer>
+
+        <key>MIMEType</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>13</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>14</integer>
+        </dict>
+      </dict>
+
+      <string>image/png</string>
+      <dict>
+        <key>$classname</key>
+        <string>RichLinkImageAttachmentSubstitute</string>
+      </dict>
+
+      <dict>
+        <key>version</key>
+        <integer>1</integer>
+
+        <key>URL</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>16</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>18</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>NS.base</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>0</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>5</integer>
+        </dict>
+
+        <key>NS.relative</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>17</integer>
+        </dict>
+      </dict>
+
+      <string>https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png</string>
+      <dict>
+        <key>$classname</key>
+        <string>LPIconMetadata</string>
+        <key>$classes</key>
+        <array>
+          <string>LPIconMetadata</string>
+          <string>NSObject</string>
+        </array>
+      </dict>
+
+      <dict>
+        <key>imageType</key>
+        <integer>0</integer>
+
+        <key>richLinkImageAttachmentSubstituteIndex</key>
+        <integer>1</integer>
+
+        <key>MIMEType</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>20</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>14</integer>
+        </dict>
+      </dict>
+
+      <string>image/jpeg</string>
+      <dict>
+        <key>size</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>24</integer>
+        </dict>
+
+        <key>URL</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>22</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>25</integer>
+        </dict>
+
+        <key>version</key>
+        <integer>1</integer>
+      </dict>
+
+      <dict>
+        <key>NS.base</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>0</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>5</integer>
+        </dict>
+
+        <key>NS.relative</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>23</integer>
+        </dict>
+      </dict>
+
+      <string>https://i1.sndcdn.com/avatars-ME2IXmGINutgJnO5-CS9qEw-t500x500.jpg</string>
+      <string>{500, 500}</string>
+      <dict>
+        <key>$classname</key>
+        <string>LPImageMetadata</string>
+
+        <key>$classes</key>
+        <array>
+          <string>LPImageMetadata</string>
+          <string>NSObject</string>
+        </array>
+      </dict>
+
+      <dict>
+        <key>NS.objects</key>
+        <array>
+          <dict>
+            <key>CF$UID</key>
+            <integer>15</integer>
+          </dict>
+          <dict>
+            <key>CF$UID</key>
+            <integer>27</integer>
+          </dict>
+        </array>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>30</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>version</key>
+        <integer>1</integer>
+
+        <key>URL</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>28</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>18</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>NS.base</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>0</integer>
+        </dict>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>5</integer>
+        </dict>
+
+        <key>NS.relative</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>29</integer>
+        </dict>
+      </dict>
+
+      <string>https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico</string>
+      <dict>
+        <key>$classname</key>
+        <string>NSArray</string>
+
+        <key>$classes</key>
+        <array>
+          <string>NSArray</string>
+          <string>NSObject</string>
+        </array>
+      </dict>
+
+      <dict>
+        <key>NS.objects</key>
+        <array>
+          <dict>
+            <key>CF$UID</key>
+            <integer>21</integer>
+          </dict>
+        </array>
+
+        <key>$class</key>
+        <dict>
+          <key>CF$UID</key>
+          <integer>30</integer>
+        </dict>
+      </dict>
+
+      <dict>
+        <key>$classname</key>
+        <string>LPLinkMetadata</string>
+
+        <key>$classes</key>
+        <array>
+          <string>LPLinkMetadata</string>
+          <string>NSObject</string>
+        </array>
+      </dict>
+      
+      <dict>
+        <key>$classname</key>
+        <string>RichLink</string>
+      </dict>
+    </array>
+  </dict>
+</plist>

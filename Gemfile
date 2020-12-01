@@ -7,6 +7,7 @@ gem "foreman"
 gem "puma"
 gem "sqlite3"
 gem "redis"
+gem "CFPropertyList"
 
 gem "jquery-rails"
 gem "bootstrap"

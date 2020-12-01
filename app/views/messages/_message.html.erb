@@ -2,6 +2,9 @@
   <td class="sender"><%= message.identifier %></td>
   <td class="message">
     <% if message.cache_has_attachments? %>
+    <% if message.payload_data %>
+      <%= attachment_plist_tag message.payload_data %>
+    <% end %>
       <% message.attachments.each do |a| %>
         <%= attachment_image_tag a, style: "max-width: 90%; max-height: 200px" %>
       <% end %>

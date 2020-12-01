@@ -116,6 +116,8 @@ class Message < ApplicationRecord
           is_from_me,
           handle.id AS handle_identifier,
           cache_has_attachments,
+          balloon_bundle_id,
+          payload_data,
           datetime(
             message.date / 1000000000 + strftime("%s", "2001-01-01"),
             "unixepoch", "localtime"

@@ -1,0 +1,152 @@
+{ 
+	"$version" = 100000; 
+	"$archiver" = NSKeyedArchiver; 
+	"$top" = { 
+		root = { 
+			"CF$UID" = 1; 
+		}; 
+	}; 
+
+	"$objects" = ( 
+		"$null", 
+		{ 
+			richLinkIsPlaceholder = false; 
+			richLinkMetadata = { "CF$UID" = 2; }; 
+			"$class" = { "CF$UID" = 38; }; 
+		}, 
+		{ 
+			imageMetadata = { "CF$UID" = 19; }; 
+			itemType = { "CF$UID" = 9; }; 
+			version = 1; 
+			iconMetadata = { "CF$UID" = 13; }; 
+			URL = { "CF$UID" = 3; }; 
+			title = { "CF$UID" = 6; }; 
+			"$class" = { "CF$UID" = 37; }; 
+			summary = { "CF$UID" = 7; }; 
+			icon = { "CF$UID" = 10; }; 
+			image = { "CF$UID" = 17; }; 
+			siteName = { "CF$UID" = 8; }; 
+			images = { "CF$UID" = 32; }; 
+			icons = { "CF$UID" = 24; }; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 4; }; 
+		}, 
+		"https://soundcloud.com/scottarutherford/its-my-life/s-O5cwDMHPkK4",
+		{ 
+			"$classname" = NSURL; 
+			"$classes" = ( NSURL, NSObject ); 
+		}, 
+		"It's My Life", 
+		"Except where clearly a cover (or the dance mixes), all music written and copyright Scott Rutherford, all instruments, programming, mixing, mastering by Scott Rutherford copyright, me, everywhere, fore", 
+		SoundCloud, 
+		"music.song", 
+		{ 
+			imageType = 0; 
+			richLinkImageAttachmentSubstituteIndex = 0; 
+			MIMEType = { "CF$UID" = 11; }; 
+			"$class" = { "CF$UID" = 12; };
+		}, 
+		"image/png", 
+		{ 
+			"$classname" = RichLinkImageAttachmentSubstitute; 
+		}, 
+		{ 
+			version = 1; 
+			URL = { "CF$UID" = 14; }; 
+			"$class" = { "CF$UID" = 16; }; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 15; }; 
+		}, 
+		"https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png", 
+		{ 
+			"$classname" = LPIconMetadata; 
+		}, 
+		{ 
+			imageType = 0; 
+			richLinkImageAttachmentSubstituteIndex = 1; 
+			MIMEType = { "CF$UID" = 18; }; 
+			"$class" = { "CF$UID" = 12; }; 
+		}, 
+		"image/jpeg", 
+		{ 
+			size = { "CF$UID" = 22; }; 
+			URL = { "CF$UID" = 20; }; 
+			"$class" = { "CF$UID" = 23; }; 
+			version = 1; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 21; }; 
+		}, 
+		"https://i1.sndcdn.com/avatars-ME2IXmGINutgJnO5-CS9qEw-t500x500.jpg", 
+		"{500, 500}", 
+		{ 
+			"$classname" = LPImageMetadata; 
+		}, 
+		{ 
+			"NS.objects" = ( 
+				{ "CF$UID" = 25; }, 
+				{ "CF$UID" = 28; } 
+			); 
+			"$class" = { "CF$UID" = 31; }; 
+		}, 
+		{ 
+			version = 1; 
+			URL = { "CF$UID" = 26; }; 
+			"$class" = { "CF$UID" = 16; }; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 27; };
+		}, 
+		"https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png", 
+		{ 
+			version = 1; 
+			URL = { "CF$UID" = 29; }; 
+			"$class" = { "CF$UID" = 16; }; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 30; }; 
+		}, 
+		"https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico", 
+		{ 
+			"$classname" = NSArray; 
+			"$classes" = ( NSArray, NSObject ); 
+		}, 
+		{ 
+			"NS.objects" = ( 
+				{ "CF$UID" = 33; } 
+			); 
+			"$class" = { "CF$UID" = 31; }; 
+		}, 
+		{ 
+			size = { "CF$UID" = 36; }; 
+			URL = { "CF$UID" = 34; }; 
+			"$class" = { "CF$UID" = 23; }; 
+			version = 1; 
+		}, 
+		{ 
+			"NS.base" = { "CF$UID" = 0; }; 
+			"$class" = { "CF$UID" = 5; }; 
+			"NS.relative" = { "CF$UID" = 35; }; 
+		}, 
+		"https://i1.sndcdn.com/avatars-ME2IXmGINutgJnO5-CS9qEw-t500x500.jpg", 
+		"{500, 500}", 
+		{ 
+			"$classname" = LPLinkMetadata; 
+		}, 
+		{ 
+			"$classname" = RichLink; 
+		} 
+	); 
+}

@@ -11,6 +11,23 @@ module ChatsHelper
     end
   end
 
+  def attachment_plist_tag(data)
+    cf_list = CFPropertyList::List.new(formatted: true)
+    cf_list.load_binary_str(data)
+    logger.info("New attachment")
+    logger.info(cf_list.value.value["$objects"].value[6].value)
+    logger.info(cf_list.value.value["$objects"].value[7].value)
+    logger.info(cf_list.value.value["$objects"].value[4].value)
+    logger.info(cf_list.value.value["$objects"].value[15].value)
+    logger.info(cf_list.value.value["$objects"].value[21].value)
+
+    # content_tag('pre', cf_list.to_str(CFPropertyList::List::FORMAT_XML), class: "list-group-item")
+    content_tag('pre', cf_list.to_str(CFPropertyList::List::FORMAT_PLAIN), class: "list-group-item")
+
+    # text = cf_list.
+    # auto_link(simple_format(text), html: { target: "_blank" })
+  end
+
   def datetime(datetime)
     format = datetime.today? ? :conversations_today : :conversations_longer
     l(datetime, format: format)
