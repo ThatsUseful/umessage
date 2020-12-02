@@ -47,11 +47,17 @@ class Chat < ApplicationRecord
   has_many :chat_handles
   has_many :handles, through: :chat_handles
 
+  after_initialize :parse_properties
+
+  attribute :force_to_sms
+  attribute :auto_spam_reported
+
   class << self
     def for_conversations
       select(
         <<~SQL
           chat.ROWID,
+          chat.properties,
           (
             SELECT datetime(
               message.date / 1000000000 + strftime("%s", "2001-01-01"),
@@ -73,7 +79,7 @@ class Chat < ApplicationRecord
           ) AS last_text
         SQL
       )
-        .includes(:handles)
+      .includes(:handles)
     end
 
     def fuzzy_search(params)
@@ -81,6 +87,40 @@ class Chat < ApplicationRecord
       params.each { |param| results << "guid LIKE '%#{param}%'" }
       joined_results = results.join(' OR ')
       where(joined_results).pluck(:ROWID)
+    end
+  end
+
+  def parse_properties
+    if self[:properties]
+      logger.info("Chat properties")
+
+      # Instantiate a new list
+      cf_list = CFPropertyList::List.new()
+      cf_list.load_binary_str(self[:properties])
+
+      # Flatten
+      flattened = flatten_dict(cf_list.value.value)
+      self[:force_to_sms] = flattened["shouldForceToSMS"]
+      self[:auto_spam_reported] = flattened["hasBeenAutoSpamReported"]
+
+      logger.info(cf_list.inspect)
+    end
+  end
+
+  def flatten_dict(dict)
+    dict.each_pair do |k,v|
+      if v.is_a?(CFPropertyList::CFString) then
+        dict[k] = v.value
+
+      elsif v.is_a?(CFPropertyList::CFInteger) then
+        dict[k] = v.value
+
+      elsif v.is_a?(CFPropertyList::CFBoolean) then
+        dict[k] = v.value
+
+      elsif v.is_a?(CFPropertyList::CFDate) then
+        dict[k] = v.value
+      end
     end
   end
 

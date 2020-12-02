@@ -36,4 +36,32 @@ class Attachment < ApplicationRecord
 
   has_many :message_attachments
   has_many :messages, through: :message_attachments
+
+  after_initialize :parse_user_info
+
+  def parse_user_info
+    if self[:user_info]
+      logger.info("User info")
+
+      # Instantiate a new list
+      cf_list = CFPropertyList::List.new()
+      cf_list.load_binary_str(self[:user_info])
+
+      # Flatten
+      flattened = flatten_dict(cf_list.value.value)
+
+      logger.info(cf_list.inspect)
+    end
+  end
+
+  def flatten_dict(dict)
+    dict.each_pair do |k,v|
+      if v.is_a?(CFPropertyList::CFString) then
+        dict[k] = v.value
+
+      elsif v.is_a?(CFPropertyList::CFInteger) then
+        dict[k] = v.value
+      end
+    end
+  end
 end

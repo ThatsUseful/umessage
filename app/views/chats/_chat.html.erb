@@ -7,6 +7,8 @@
         <small class="badge badge-primary badge-pill mt-1"><%= chat.unread_count %></small>
       <% end %>
     </div>
+    <p><%= chat.force_to_sms %></p>
+    <p><%= chat.auto_spam_reported %></p>
     <div class="d-flex w-100 justify-content-between">
       <p class="mb-0">
         <% if chat.last_text&.strip.present? && chat.last_text != "￼" %>

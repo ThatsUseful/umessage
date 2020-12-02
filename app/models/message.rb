@@ -107,6 +107,21 @@ class Message < ApplicationRecord
   has_many :message_attachments
   has_many :attachments, through: :message_attachments
 
+  after_initialize :parse_payload_data
+
+  attribute :parsed_payload_data 
+  attribute :title
+  attribute :summary
+  attribute :item_type
+  attribute :item_url
+  attribute :site_name
+  attribute :twitter
+  attribute :facebook
+  attribute :icon_original_url
+  attribute :icon_cached
+  attribute :image_original_url
+  attribute :image_cached
+
   class << self
     def for_chat
       select(
@@ -126,6 +141,99 @@ class Message < ApplicationRecord
       )
         .includes(:attachments, chats: :handles)
         .joins("LEFT JOIN handle on handle.ROWID = message.handle_id")
+    end
+  end
+
+  def is_balloon?
+    return self[:payload_data] != nil
+  end
+
+  def parse_payload_data
+    if self[:payload_data]
+      logger.info("New attachment")
+
+      # Instantiate a new list
+      cf_list = CFPropertyList::List.new()
+      cf_list.load_binary_str(self[:payload_data])
+
+      # Get the objects
+      objects = cf_list.value.value["$objects"].value
+      
+      # Get the root node
+      top = cf_list.value.value["$top"]
+      root_node = top.value["root"]
+      root_data_idx = root_node.value
+
+      # Get the root data node
+      root_data_node = objects[root_data_idx].value
+
+      # Find out where the metadata is
+      metadata_node = root_data_node["richLinkMetadata"].value
+
+      # Get the metadata node
+      metadata = objects[metadata_node]
+
+      # Flatten
+      flattened = flatten_object(objects, metadata)
+      logger.info(flattened.inspect)
+
+      # Set attr
+      self[:parsed_payload_data] = flattened
+      self[:title] = flattened["title"]
+      self[:summary] = flattened["summary"]
+      self[:item_type] = flattened["itemType"]
+      self[:item_url] = flattened["URL"]["NS.relative"]
+      self[:site_name] = flattened["siteName"]
+      self[:twitter] = flattened["creatorTwitterUsername"]
+      self[:facebook] = flattened["creatorFacebookProfile"]
+
+      if flattened["iconMetadata"]
+        self[:icon_original_url] = flattened["iconMetadata"]["URL"]["NS.relative"]
+        cache_index = flattened["icon"]["richLinkImageAttachmentSubstituteIndex"]
+        self[:icon_cached] = self.attachments[cache_index]
+      end
+
+      if flattened["imageMetadata"]
+        self[:image_original_url] = flattened["imageMetadata"]["URL"]["NS.relative"]
+        cache_index = flattened["image"]["richLinkImageAttachmentSubstituteIndex"]
+        self[:image_cached] = self.attachments[cache_index]
+      end
+
+      icon = flattened["icon"]["richLinkImageAttachmentSubstituteIndex"]
+    end
+  end
+
+  def flatten_object(objects, object)
+    return object.value if object.is_a?(CFPropertyList::CFString)
+
+    # If there is a CFUid, recurse that entry. Else, if not, this is the end
+    if object.is_a?(CFPropertyList::CFDictionary) then
+      dict = object.value
+      dict.each_pair do |k,v|
+        if k.match(/class/) then
+          dict.delete(k)
+
+        elsif v.is_a?(CFPropertyList::CFUid) then
+          dict[k] = flatten_object(objects, objects[v.value])
+
+        elsif v.is_a?(CFPropertyList::CFString) then
+          dict[k] = v.value
+
+        elsif v.is_a?(CFPropertyList::CFInteger) then
+          dict[k] = v.value
+
+        elsif v.is_a?(CFPropertyList::CFDictionary) then
+          dict[k] = flatten_object(objects, v)
+
+        elsif v.is_a?(CFPropertyList::CFArray) then
+          dict[k] = flatten_object(objects, v)
+        end
+      end
+
+    elsif object.is_a?(CFPropertyList::CFArray) then
+      object.value.each_with_index do |item, idx|
+        object.value[idx] = flatten_object(objects, item)
+      end
     end
   end
 

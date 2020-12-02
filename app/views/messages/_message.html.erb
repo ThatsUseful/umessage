@@ -2,13 +2,24 @@
   <td class="sender"><%= message.identifier %></td>
   <td class="message">
     <% if message.cache_has_attachments? %>
-    <% if message.payload_data %>
-      <%= attachment_plist_tag message.payload_data %>
-    <% end %>
-      <% message.attachments.each do |a| %>
-        <%= attachment_image_tag a, style: "max-width: 90%; max-height: 200px" %>
-      <% end %>
-    <% end %>
+      <% if message.is_balloon? %>
+        <p><%= message.title %></p>
+        <p><%= auto_link(simple_format(message.summary)) %></p>
+        <p><%= message.item_type %></p>
+        <p><%= auto_link(message.item_url) %></p>
+        <p><%= message.site_name %></p>
+        <p><%= message.twitter %></p>
+        <p><%= message.facebook %></p>
+        <p><%= message.icon_original_url %></p>
+        <p><%= message.image_original_url %></p>
+        <p><%= message.icon_cached.filename %></p>
+        <p><%= message.image_cached.filename %></p>
+      <% else %>
+        <% message.attachments.each do |a| %>
+          <%= attachment_image_tag a, style: "max-width: 90%; max-height: 200px" %>
+        <% end -%>
+      <% end -%>
+    <% end -%>
 
     <%= auto_link(simple_format(message.text_for_chat), html: { target: "_blank" }) %>
   </td>
