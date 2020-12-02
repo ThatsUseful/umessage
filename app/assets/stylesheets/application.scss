@@ -30,6 +30,11 @@
 #bed {
   height: 100vh;
   overflow: hidden;
+  font-size: 0.8em;
+}
+
+h6 {
+  font-size: 1.1em;
 }
 
 .scroll {
@@ -60,7 +65,7 @@
     margin: 0;
     padding: 8px;
     border-bottom: 1px solid #eee;
-    font-size: 20px;
+    font-size: 1.4em;
   }
 
   #message-form {

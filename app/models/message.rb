@@ -182,24 +182,28 @@ class Message < ApplicationRecord
       self[:title] = flattened["title"]
       self[:summary] = flattened["summary"]
       self[:item_type] = flattened["itemType"]
-      self[:item_url] = flattened["URL"]["NS.relative"]
+      self[:item_url] = flattened["URL"]["NS.relative"] if flattened["URL"]
       self[:site_name] = flattened["siteName"]
       self[:twitter] = flattened["creatorTwitterUsername"]
       self[:facebook] = flattened["creatorFacebookProfile"]
 
       if flattened["iconMetadata"]
         self[:icon_original_url] = flattened["iconMetadata"]["URL"]["NS.relative"]
+      end
+
+      if flattened[:icon]
         cache_index = flattened["icon"]["richLinkImageAttachmentSubstituteIndex"]
         self[:icon_cached] = self.attachments[cache_index]
       end
 
       if flattened["imageMetadata"]
         self[:image_original_url] = flattened["imageMetadata"]["URL"]["NS.relative"]
+      end
+
+      if flattened[:image]
         cache_index = flattened["image"]["richLinkImageAttachmentSubstituteIndex"]
         self[:image_cached] = self.attachments[cache_index]
       end
-
-      icon = flattened["icon"]["richLinkImageAttachmentSubstituteIndex"]
     end
   end
 

@@ -20,7 +20,7 @@
 
     <%= bootstrap_form_with(model: [@chat, Message.new], local: false, id: "message-form", class: "form-inline") do |f| %>
       <div class="form-row">
-        <div class="col-10">
+        <div class="col-9">
           <%= f.hidden_field :chat_id, value: @chat[:ROWID] %>
           <%= f.hidden_field :conversation_id, value: @chat.guid %>
           <%= f.text_area :text, hide_label: true, class: "w-100" %>

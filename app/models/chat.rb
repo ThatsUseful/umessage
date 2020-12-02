@@ -58,6 +58,7 @@ class Chat < ApplicationRecord
         <<~SQL
           chat.ROWID,
           chat.properties,
+          chat.service_name,
           (
             SELECT datetime(
               message.date / 1000000000 + strftime("%s", "2001-01-01"),

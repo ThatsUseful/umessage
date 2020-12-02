@@ -2,13 +2,13 @@
   <% last_msg_at = DateTime.parse(chat.last_msg_at) %>
   <%= link_to(chat, class: "list-group-item list-group-item-action flex-column align-items-start", data: { chat: chat.id, date: last_msg_at.to_i } ) do %>
     <div class="d-flex w-100 justify-content-between">
-      <h6 class="mb-1 mt-1"><%= chat.identifiers %></h6>
+      <h6 class="mb-1 mt-1">
+        [<%= chat.service_name %>]&nbsp;<%= chat.identifiers %>      
+      </h6>
       <% if chat.unread_count > 0 %>
         <small class="badge badge-primary badge-pill mt-1"><%= chat.unread_count %></small>
       <% end %>
     </div>
-    <p><%= chat.force_to_sms %></p>
-    <p><%= chat.auto_spam_reported %></p>
     <div class="d-flex w-100 justify-content-between">
       <p class="mb-0">
         <% if chat.last_text&.strip.present? && chat.last_text != "￼" %>
